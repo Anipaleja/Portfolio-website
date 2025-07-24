@@ -438,25 +438,54 @@ html {
 
 /* Link styles */
 .link {
-  @apply text-green-400 hover:bg-green-400 hover:text-gray-900 decoration-dashed underline-offset-4 duration-200 transition-colors;
+  color: var(--theme-green);
   text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  transition: all 0.2s;
 }
 
-.link:not(:hover) {
-  text-decoration: underline;
+.link:hover {
+  background-color: var(--theme-green);
+  color: var(--theme-bg);
 }
 
 /* Better button styles */
 .btn {
-  @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.btn:focus {
+  outline: 2px solid var(--theme-green);
+  outline-offset: 2px;
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-green-500 to-blue-600 text-white hover:scale-105 hover:shadow-lg hover:shadow-green-500/25;
+  background: var(--theme-accent);
+  color: var(--theme-bg);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px var(--theme-accent)25;
 }
 
 .btn-secondary {
-  @apply bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-white/20;
+  background-color: var(--theme-surface)30;
+  color: var(--theme-text);
+  border: 1px solid var(--theme-overlay)20;
+}
+
+.btn-secondary:hover {
+  background-color: var(--theme-surface)50;
+  border-color: var(--theme-overlay)30;
 }
 
 /* Utility classes */
