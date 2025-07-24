@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import ThemeSelector from '@/components/ThemeSelector'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,12 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="theme-mocha">
       <body className={inter.className}>
-        <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <ThemeProvider>
+          <Navigation />
+          <ThemeSelector />
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

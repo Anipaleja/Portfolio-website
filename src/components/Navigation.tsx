@@ -59,7 +59,7 @@ const Navigation = () => {
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 font-mono ${
         scrolled 
-          ? 'backdrop-blur-xl bg-gray-900/80 border-b border-white/10' 
+          ? 'backdrop-blur-xl bg-surface/80 border-b border-overlay/20' 
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,8 +79,8 @@ const Navigation = () => {
                     href={item.href}
                     className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? 'text-green-400 bg-green-400/10'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        ? 'text-accent bg-accent/10'
+                        : 'text-subtext hover:text-accent hover:bg-surface/20'
                     }`}
                   >
                     {item.name}
@@ -97,7 +97,7 @@ const Navigation = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-gray-400 hover:text-green-400 transition-colors duration-200"
+                  className="p-2 rounded-lg text-subtext hover:text-accent transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={18} />
@@ -109,7 +109,7 @@ const Navigation = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-200"
+                className="p-2 rounded-lg text-subtext hover:text-accent hover:bg-surface/20 transition-all duration-200"
                 aria-label="Toggle menu"
                 aria-expanded={isOpen}
               >
@@ -129,15 +129,15 @@ const Navigation = () => {
         />
       )}
       
-      <aside className={`fixed inset-y-0 right-0 z-40 flex w-80 transform flex-col bg-gray-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
+      <aside className={`fixed inset-y-0 right-0 z-40 flex w-80 transform flex-col bg-surface border-l border-overlay/20 shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         {/* Sidebar Header */}
-        <div className="flex h-16 flex-shrink-0 items-center justify-between border-b border-white/10 px-6">
-          <span className="text-green-400 font-mono text-lg font-semibold">Navigation</span>
+        <div className="flex h-16 flex-shrink-0 items-center justify-between border-b border-overlay/20 px-6">
+          <span className="text-accent font-mono text-lg font-semibold">Navigation</span>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg text-gray-400 hover:text-red-400 transition-colors duration-200"
+            className="p-2 rounded-lg text-subtext hover:text-red-400 transition-colors duration-200"
             aria-label="Close navigation menu"
           >
             <X size={20} />
@@ -156,8 +156,8 @@ const Navigation = () => {
                     href={item.href}
                     className={`flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium transition-all duration-200 ${
                       isActive
-                        ? 'text-green-400 bg-green-400/10 border-l-2 border-green-400'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        ? 'text-accent bg-accent/10 border-l-2 border-accent'
+                        : 'text-subtext hover:text-accent hover:bg-surface/20'
                     }`}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? 'page' : undefined}
@@ -171,11 +171,11 @@ const Navigation = () => {
           </ul>
 
           {/* Divider */}
-          <hr className="border-white/10 my-6" />
+          <hr className="border-overlay/20 my-6" />
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-gray-400 text-xs font-semibold tracking-wider uppercase px-4">
+            <h3 className="text-subtext text-xs font-semibold tracking-wider uppercase px-4">
               Connect
             </h3>
             <div className="flex items-center justify-center space-x-4">
@@ -185,7 +185,7 @@ const Navigation = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg text-gray-400 hover:text-green-400 hover:bg-white/5 transition-all duration-200"
+                  className="p-3 rounded-lg text-subtext hover:text-accent hover:bg-surface/20 transition-all duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
