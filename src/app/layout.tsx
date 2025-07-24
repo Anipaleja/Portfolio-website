@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import { ThemeProvider } from '@/contexts/ThemeContext'
-import ThemeSelector from '@/components/ThemeSelector'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,7 +37,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <Navigation />
-          <ThemeSelector />
           <main className="min-h-screen">
             {children}
           </main>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Github, Linkedin, Mail, Home, User, Code, BookOpen, MessageCircle } from 'lucide-react'
 import Breadcrumb from './Breadcrumb'
+import ThemeSelector from './ThemeSelector'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -89,7 +90,7 @@ const Navigation = () => {
               })}
             </div>
 
-            {/* Social Links - Desktop */}
+            {/* Social Links & Theme Selector - Desktop */}
             <div className="hidden md:flex items-center space-x-2">
               {socialLinks.map((social) => (
                 <a
@@ -103,6 +104,9 @@ const Navigation = () => {
                   <social.icon size={18} />
                 </a>
               ))}
+              <div className="ml-2 pl-2 border-l border-overlay/20">
+                <ThemeSelector />
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -192,6 +196,14 @@ const Navigation = () => {
                 </a>
               ))}
             </div>
+          </div>
+
+          {/* Theme Selector */}
+          <div className="mt-6 px-4">
+            <h3 className="text-subtext text-xs font-semibold tracking-wider uppercase mb-3">
+              Theme
+            </h3>
+            <ThemeSelector />
           </div>
         </nav>
       </aside>
