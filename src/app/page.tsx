@@ -11,10 +11,12 @@ import Stats from '@/components/Stats'
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Hero />
-      <Stats />
-      <FeaturedProjects />
-      <BlogPreview />
+      <div className="pt-16"> {/* Add padding for fixed header */}
+        <Hero />
+        <Stats />
+        <FeaturedProjects />
+        <BlogPreview />
+      </div>
     </div>
   )
 }
