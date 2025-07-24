@@ -238,7 +238,7 @@ const AboutPage = () => {
               LinkedIn
             </a>
             <a
-              href="mailto:anish@example.com"
+              href="mailto:anipaleja@gmail.com"
               className="flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
             >
               <Mail className="mr-2" size={20} />

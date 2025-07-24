@@ -33,7 +33,7 @@ const ContactPage = () => {
     e.preventDefault()
     // Here you would typically send the form data to your backend
     // For now, we'll just create a mailto link
-    const mailtoLink = `mailto:anish@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:anipaleja@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`
     window.location.href = mailtoLink
@@ -51,8 +51,8 @@ const ContactPage = () => {
       icon: Mail,
       title: 'Email',
       description: 'Send me an email and I\'ll get back to you within 24 hours',
-      value: 'anish@example.com',
-      href: 'mailto:anish@example.com',
+      value: 'anipaleja@gmail.com',
+      href: 'mailto:anipaleja@gmail.com',
       primary: true
     },
     {
@@ -279,7 +279,7 @@ const ContactPage = () => {
               </p>
               <div className="flex space-x-3">
                 <a
-                  href="mailto:anish@example.com"
+                  href="mailto:anipaleja@gmail.com"
                   className="flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm"
                 >
                   <Mail className="mr-2" size={16} />
