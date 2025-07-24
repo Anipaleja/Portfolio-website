@@ -16,7 +16,7 @@ const Stats = () => {
     {
       icon: Code,
       label: 'Languages',
-      value: '8+',
+      value: '18+',
       description: 'Programming languages mastered',
       color: 'accent',
       details: 'Python, TypeScript, Go, Rust, C++, Java, JavaScript, SQL'
@@ -24,7 +24,7 @@ const Stats = () => {
     {
       icon: Star,
       label: 'GitHub Stars',
-      value: '10+',
+      value: '20+',
       description: 'Stars across repositories',
       color: 'yellow',
       details: 'Recognition from the developer community'
@@ -40,7 +40,7 @@ const Stats = () => {
     {
       icon: Users,
       label: 'Contributions',
-      value: '500+',
+      value: '600+',
       description: 'Commits this year',
       color: 'purple',
       details: 'Consistent development and innovation'
