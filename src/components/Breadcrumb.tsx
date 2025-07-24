@@ -2,52 +2,89 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { Home, ChevronRight } from 'lucide-react'
+import { Home, Terminal } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const Breadcrumb = () => {
   const pathname = usePathname()
-  const breadcrumbs = pathname.split('/').filter(Boolean).slice(0, 4)
+  const [showCursor, setShowCursor] = useState(true)
+
+  // Animate cursor blinking
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev)
+    }, 800)
+    return () => clearInterval(interval)
+  }, [])
+
+  // Split pathname into segments
+  const pathSegments = pathname.split('/').filter(segment => segment !== '')
+  
+  // Create breadcrumb items
+  const breadcrumbItems = [
+    { name: 'home', href: '/', isHome: true }
+  ]
+  
+  let currentPath = ''
+  pathSegments.forEach(segment => {
+    currentPath += `/${segment}`
+    breadcrumbItems.push({
+      name: segment,
+      href: currentPath,
+      isHome: false
+    })
+  })
 
   return (
-    <nav aria-label="Breadcrumbs" className="flex items-center space-x-1 text-sm">
-      <Link
-        href="/"
-        className="text-emerald-400 hover:text-emerald-300 transition-colors duration-200 flex items-center"
-        aria-label="Home"
-      >
-        <Home size={16} />
-      </Link>
-      
-      {breadcrumbs.map((segment, index) => {
-        const href = `/${breadcrumbs.slice(0, index + 1).join('/')}`
-        const isLast = index === breadcrumbs.length - 1
-        const label = segment.charAt(0).toUpperCase() + segment.slice(1)
-        
-        return (
-          <div key={`breadcrumb-${index}`} className="flex items-center space-x-1">
-            <ChevronRight size={14} className="text-gray-600" />
-            {isLast ? (
-              <span className="text-gray-300" aria-current="page">
-                {label}
-              </span>
+    <nav 
+      className="flex items-center space-x-1 font-mono text-sm text-emerald-400/80 select-none"
+      aria-label="Breadcrumb navigation"
+    >
+      {/* Terminal prompt symbol */}
+      <div className="flex items-center space-x-2 mr-2">
+        <Terminal size={16} className="text-emerald-400" />
+        <span className="text-emerald-500">~</span>
+      </div>
+
+      {breadcrumbItems.map((item, index) => (
+        <div key={item.href} className="flex items-center space-x-1">
+          {/* Path separator */}
+          {index > 0 && (
+            <span className="text-emerald-600/60">/</span>
+          )}
+          
+          {/* Breadcrumb item */}
+          <Link
+            href={item.href}
+            className={`
+              transition-all duration-200 hover:text-emerald-400 
+              ${index === breadcrumbItems.length - 1 
+                ? 'text-emerald-300 font-medium' 
+                : 'text-emerald-400/70 hover:text-emerald-400'
+              }
+            `}
+            aria-current={index === breadcrumbItems.length - 1 ? 'page' : undefined}
+          >
+            {item.isHome ? (
+              <div className="flex items-center space-x-1">
+                <Home size={14} />
+                <span>~</span>
+              </div>
             ) : (
-              <Link
-                href={href}
-                className="text-gray-400 hover:text-emerald-400 transition-colors duration-200"
-              >
-                {label}
-              </Link>
+              item.name
             )}
-          </div>
-        )
-      })}
-      
-      {breadcrumbs.length > 0 && (
-        <div className="flex items-center space-x-1">
-          <ChevronRight size={14} className="text-gray-600" />
-          <span className="w-2 h-4 bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+          </Link>
         </div>
-      )}
+      ))}
+      
+      {/* Animated cursor */}
+      <span 
+        className={`
+          inline-block w-2 h-4 bg-emerald-400 ml-1 transition-opacity duration-100
+          ${showCursor ? 'opacity-100' : 'opacity-0'}
+        `}
+        aria-hidden="true"
+      />
     </nav>
   )
 }
