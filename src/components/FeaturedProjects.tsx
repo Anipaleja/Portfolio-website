@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       forks: 1,
       featured: true,
       icon: Cpu,
-      gradient: 'from-green-500 to-teal-600',
+      color: 'green',
       category: 'Robotics'
     },
     {
@@ -35,7 +35,7 @@ const FeaturedProjects = () => {
       forks: 0,
       featured: true,
       icon: Brain,
-      gradient: 'from-purple-500 to-indigo-600',
+      color: 'purple',
       category: 'AI/ML'
     },
     {
@@ -47,7 +47,7 @@ const FeaturedProjects = () => {
       forks: 0,
       featured: true,
       icon: Zap,
-      gradient: 'from-blue-500 to-cyan-600',
+      color: 'accent',
       category: 'Machine Learning'
     },
     {
@@ -59,7 +59,7 @@ const FeaturedProjects = () => {
       forks: 0,
       featured: true,
       icon: Shield,
-      gradient: 'from-red-500 to-orange-600',
+      color: 'red',
       category: 'Security'
     },
     {
@@ -71,7 +71,7 @@ const FeaturedProjects = () => {
       forks: 0,
       featured: true,
       icon: Code,
-      gradient: 'from-yellow-500 to-amber-600',
+      color: 'yellow',
       category: 'Developer Tools'
     },
     {
@@ -83,7 +83,7 @@ const FeaturedProjects = () => {
       forks: 0,
       featured: true,
       icon: Globe,
-      gradient: 'from-pink-500 to-rose-600',
+      color: 'pink',
       category: 'AI Framework'
     }
   ]
@@ -133,8 +133,10 @@ const FeaturedProjects = () => {
               >
                 {/* Project Icon & Category */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${project.gradient} shadow-lg`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className={`p-3 rounded-xl shadow-lg text-${project.color}`} style={{
+                    backgroundColor: `var(--theme-${project.color})20`
+                  }}>
+                    <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-medium text-gray-400 bg-white/5 px-3 py-1 rounded-full">
                     {project.category}

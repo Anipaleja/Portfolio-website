@@ -18,7 +18,7 @@ const Stats = () => {
       label: 'Languages',
       value: '8+',
       description: 'Programming languages mastered',
-      gradient: 'from-blue-500 to-cyan-600',
+      color: 'accent',
       details: 'Python, TypeScript, Go, Rust, C++, Java, JavaScript, SQL'
     },
     {
@@ -26,7 +26,7 @@ const Stats = () => {
       label: 'GitHub Stars',
       value: '10+',
       description: 'Stars across repositories',
-      gradient: 'from-yellow-500 to-orange-600',
+      color: 'yellow',
       details: 'Recognition from the developer community'
     },
     {
@@ -34,7 +34,7 @@ const Stats = () => {
       label: 'Projects',
       value: '30+',
       description: 'Open source repositories',
-      gradient: 'from-green-500 to-teal-600',
+      color: 'green',
       details: 'AI, robotics, security, and developer tools'
     },
     {
@@ -42,7 +42,7 @@ const Stats = () => {
       label: 'Contributions',
       value: '500+',
       description: 'Commits this year',
-      gradient: 'from-purple-500 to-indigo-600',
+      color: 'purple',
       details: 'Consistent development and innovation'
     }
   ]
@@ -75,8 +75,12 @@ const Stats = () => {
     <section className="section-padding relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-green-500/40 to-teal-500/40 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/3 w-72 h-72 rounded-full blur-3xl" style={{
+          background: `linear-gradient(45deg, var(--theme-accent)40, var(--theme-purple)40)`
+        }}></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 rounded-full blur-3xl" style={{
+          background: `linear-gradient(45deg, var(--theme-green)40, var(--theme-teal)40)`
+        }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -108,22 +112,24 @@ const Stats = () => {
                 className="group card-glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-500"
               >
                 <div className="mb-6">
-                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${stat.gradient} shadow-lg`}>
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className={`inline-flex p-4 rounded-xl shadow-lg text-${stat.color}`} style={{
+                    backgroundColor: `var(--theme-${stat.color})20`
+                  }}>
+                    <Icon className="w-8 h-8" />
                   </div>
                 </div>
                 
                 <div className="mb-2">
-                  <span className="text-4xl font-black text-white group-hover:text-green-400 transition-colors">
+                  <span className={`text-4xl font-black text-text group-hover:text-${stat.color} transition-colors`}>
                     {stat.value}
                   </span>
                 </div>
                 
-                <h3 className="text-lg font-bold text-gray-300 mb-2">{stat.label}</h3>
-                <p className="text-sm text-gray-400 mb-4">{stat.description}</p>
+                <h3 className="text-lg font-bold text-subtext mb-2">{stat.label}</h3>
+                <p className="text-sm text-overlay mb-4">{stat.description}</p>
                 
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-xs text-gray-500 leading-relaxed">{stat.details}</p>
+                  <p className="text-xs text-overlay leading-relaxed">{stat.details}</p>
                 </div>
               </div>
             )
