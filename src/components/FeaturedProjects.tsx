@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Github, ExternalLink, Star, GitFork, ArrowRight } from 'lucide-react'
+import { Github, ExternalLink, Star, GitFork, ArrowRight, Zap, Brain, Shield, Code, Cpu, Globe } from 'lucide-react'
 
 const FeaturedProjects = () => {
   const [mounted, setMounted] = useState(false)
@@ -21,7 +21,10 @@ const FeaturedProjects = () => {
       github: 'https://github.com/Anipaleja/Robotic-AI-Arm',
       stars: 3,
       forks: 1,
-      featured: true
+      featured: true,
+      icon: Cpu,
+      gradient: 'from-emerald-500 to-teal-600',
+      category: 'Robotics'
     },
     {
       title: 'iLLuMinator-4.7B',
@@ -30,7 +33,10 @@ const FeaturedProjects = () => {
       github: 'https://github.com/Anipaleja/iLLuMinator-4.7B',
       stars: 1,
       forks: 0,
-      featured: true
+      featured: true,
+      icon: Brain,
+      gradient: 'from-purple-500 to-indigo-600',
+      category: 'AI/ML'
     },
     {
       title: 'NHL Outcome Predictor ML',
@@ -39,16 +45,10 @@ const FeaturedProjects = () => {
       github: 'https://github.com/Anipaleja/NHL-Outcome-Predictor-ML',
       stars: 2,
       forks: 0,
-      featured: true
-    },
-    {
-      title: 'Neuraforge',
-      description: 'A general-purpose agentic AI system written in pure Python using hand-coded neural networks and low-level PyTorch models (not pretrained).',
-      tech: ['Python', 'PyTorch', 'Neural Networks', 'AI Agents'],
-      github: 'https://github.com/Anipaleja/Neuraforge',
-      stars: 1,
-      forks: 0,
-      featured: true
+      featured: true,
+      icon: Zap,
+      gradient: 'from-blue-500 to-cyan-600',
+      category: 'Machine Learning'
     },
     {
       title: 'nginx-defender',
@@ -57,7 +57,10 @@ const FeaturedProjects = () => {
       github: 'https://github.com/Anipaleja/nginx-defender',
       stars: 1,
       forks: 0,
-      featured: true
+      featured: true,
+      icon: Shield,
+      gradient: 'from-red-500 to-orange-600',
+      category: 'Security'
     },
     {
       title: 'Advanced Dev Utils',
@@ -66,90 +69,159 @@ const FeaturedProjects = () => {
       github: 'https://github.com/Anipaleja/Advanced-dev-utils',
       stars: 1,
       forks: 0,
-      featured: true
+      featured: true,
+      icon: Code,
+      gradient: 'from-yellow-500 to-amber-600',
+      category: 'Developer Tools'
+    },
+    {
+      title: 'Neuraforge',
+      description: 'A general-purpose agentic AI system written in pure Python using hand-coded neural networks and low-level PyTorch models (not pretrained).',
+      tech: ['Python', 'PyTorch', 'Neural Networks', 'AI Agents'],
+      github: 'https://github.com/Anipaleja/Neuraforge',
+      stars: 1,
+      forks: 0,
+      featured: true,
+      icon: Globe,
+      gradient: 'from-pink-500 to-rose-600',
+      category: 'AI Framework'
     }
   ]
 
   return (
-    <section className="py-20 px-4 bg-secondary/20">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured Projects
+    <section className="section-padding relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 mb-6">
+            <Zap className="w-4 h-4 text-emerald-400 mr-2" />
+            <span className="text-sm font-medium text-gray-300">Featured Work</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-black mb-6">
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Featured Projects
+            </span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-6">
-            Innovative solutions spanning AI, robotics, and developer tools
+          
+          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+            Innovative solutions spanning AI, robotics, and developer tools. 
+            Each project represents a journey of learning and pushing boundaries.
           </p>
+          
           <Link
             href="/projects"
-            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+            className="group inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
           >
             View all projects
-            <ArrowRight className="ml-2" size={20} />
+            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-background border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <div className="flex space-x-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <Github size={20} />
-                  </a>
-                </div>
-              </div>
-
-              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="px-2 py-1 bg-secondary text-xs rounded-md"
-                  >
-                    {tech}
+          {featuredProjects.map((project, index) => {
+            const Icon = project.icon
+            return (
+              <div
+                key={index}
+                className="group card-glass rounded-2xl p-8 hover:scale-105 transition-all duration-500"
+              >
+                {/* Project Icon & Category */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${project.gradient} shadow-lg`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-xs font-medium text-gray-400 bg-white/5 px-3 py-1 rounded-full">
+                    {project.category}
                   </span>
-                ))}
-              </div>
+                </div>
 
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-1">
-                  <Star size={16} />
-                  <span>{project.stars}</span>
+                {/* Project Title */}
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                  {project.title}
+                </h3>
+
+                {/* Project Description */}
+                <p className="text-gray-400 mb-6 leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-gray-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="flex items-center space-x-1">
-                  <GitFork size={16} />
-                  <span>{project.forks}</span>
+
+                {/* Stats & Links */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 text-yellow-400" />
+                      <span>{project.stars}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <GitFork className="w-4 h-4" />
+                      <span>{project.forks}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex space-x-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group"
+                      aria-label="GitHub"
+                    >
+                      <Github className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                    </a>
+                  </div>
                 </div>
+
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Interested in collaborating or learning more about these projects?
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            Get In Touch
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
+        {/* Call to Action */}
+        <div className="text-center mt-20">
+          <div className="glass-strong rounded-3xl p-12 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ready to Collaborate?
+            </h3>
+            <p className="text-gray-400 mb-8 text-lg max-w-2xl mx-auto">
+              I'm always interested in discussing new projects, sharing ideas, or collaborating 
+              on innovative solutions. Let's build something amazing together!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25"
+              >
+                Get In Touch
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/projects"
+                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-white border border-white/10 hover:border-white/30 transition-all duration-300"
+              >
+                View All Projects
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Code, Star, GitFork, Users } from 'lucide-react'
+import { Code, Star, GitFork, Users, Zap, Brain, Cpu, Rocket } from 'lucide-react'
 
 const Stats = () => {
   const [mounted, setMounted] = useState(false)
@@ -16,79 +16,183 @@ const Stats = () => {
     {
       icon: Code,
       label: 'Languages',
-      value: 'Python, TypeScript, Go, Rust',
-      description: 'Primary technologies'
+      value: '8+',
+      description: 'Programming languages mastered',
+      gradient: 'from-blue-500 to-cyan-600',
+      details: 'Python, TypeScript, Go, Rust, C++, Java, JavaScript, SQL'
     },
     {
       icon: Star,
       label: 'GitHub Stars',
       value: '10+',
-      description: 'Across all repositories'
+      description: 'Stars across repositories',
+      gradient: 'from-yellow-500 to-orange-600',
+      details: 'Recognition from the developer community'
     },
     {
       icon: GitFork,
       label: 'Projects',
       value: '30+',
-      description: 'Open source repositories'
+      description: 'Open source repositories',
+      gradient: 'from-emerald-500 to-teal-600',
+      details: 'AI, robotics, security, and developer tools'
     },
     {
       icon: Users,
-      label: 'Organizations',
-      value: '3',
-      description: 'Active memberships'
+      label: 'Contributions',
+      value: '500+',
+      description: 'Commits this year',
+      gradient: 'from-purple-500 to-indigo-600',
+      details: 'Consistent development and innovation'
+    }
+  ]
+
+  const highlights = [
+    {
+      icon: Brain,
+      title: 'AI & Machine Learning',
+      description: 'Building custom neural networks, LLMs, and intelligent systems from scratch using PyTorch and TensorFlow',
+      gradient: 'from-pink-500 to-rose-600',
+      achievements: ['4.7B Parameter Language Model', 'Custom RAG Implementation', 'EMG Signal Processing']
+    },
+    {
+      icon: Cpu,
+      title: 'Robotics & Hardware',
+      description: 'Developing EMG-controlled prosthetics and AI-powered robotic arms with real-time sensor integration',
+      gradient: 'from-orange-500 to-red-600',
+      achievements: ['EMG-Controlled Arm', 'Real-time Processing', 'User Recognition System']
+    },
+    {
+      icon: Rocket,
+      title: 'Developer Tools',
+      description: 'Creating utilities, libraries, and security tools that make developers more productive and secure',
+      gradient: 'from-green-500 to-emerald-600',
+      achievements: ['Advanced Dev Utils', 'nginx-defender', 'Real-time Monitoring']
     }
   ]
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Coding Stats & Highlights
+    <section className="section-padding relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-emerald-500/40 to-teal-500/40 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 mb-6">
+            <Zap className="w-4 h-4 text-yellow-400 mr-2" />
+            <span className="text-sm font-medium text-gray-300">Performance Metrics</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-black mb-6">
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              By the Numbers
+            </span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Building innovative solutions with modern technologies
+          
+          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+            A snapshot of my journey in technology, innovation, and open-source contribution. 
+            Every metric represents hours of learning and building.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
               <div
                 key={index}
-                className="bg-secondary/50 p-6 rounded-lg text-center hover:bg-secondary/70 transition-colors"
+                className="group card-glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-500"
               >
-                <div className="mb-4 flex justify-center">
-                  <Icon size={32} className="text-primary" />
+                <div className="mb-6">
+                  <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${stat.gradient} shadow-lg`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{stat.value}</h3>
-                <p className="font-medium mb-1">{stat.label}</p>
-                <p className="text-sm text-muted-foreground">{stat.description}</p>
+                
+                <div className="mb-2">
+                  <span className="text-4xl font-black text-white group-hover:text-emerald-400 transition-colors">
+                    {stat.value}
+                  </span>
+                </div>
+                
+                <h3 className="text-lg font-bold text-gray-300 mb-2">{stat.label}</h3>
+                <p className="text-sm text-gray-400 mb-4">{stat.description}</p>
+                
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs text-gray-500 leading-relaxed">{stat.details}</p>
+                </div>
               </div>
             )
           })}
         </div>
 
-        {/* Additional highlights */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
-            <p className="text-muted-foreground">
-              Building custom neural networks, LLMs, and intelligent systems from scratch
+        {/* Technical Highlights */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {highlights.map((highlight, index) => {
+            const Icon = highlight.icon
+            return (
+              <div
+                key={index}
+                className="group card-glass rounded-2xl p-8 hover:scale-105 transition-all duration-500"
+              >
+                <div className="mb-6">
+                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${highlight.gradient} shadow-lg`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                  {highlight.title}
+                </h3>
+                
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {highlight.description}
+                </p>
+                
+                <div className="space-y-2">
+                  {highlight.achievements.map((achievement, achIndex) => (
+                    <div key={achIndex} className="flex items-center text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300">{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-20">
+          <div className="glass-strong rounded-3xl p-12 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Let's Build Something Amazing
+            </h3>
+            <p className="text-gray-400 mb-8 text-lg max-w-2xl mx-auto">
+              These numbers represent just the beginning. I'm always looking for new challenges 
+              and opportunities to push the boundaries of what's possible with technology.
             </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-2">Robotics & Hardware</h3>
-            <p className="text-muted-foreground">
-              Developing EMG-controlled prosthetics and AI-powered robotic arms
-            </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-2">Developer Tools</h3>
-            <p className="text-muted-foreground">
-              Creating utilities and libraries that make developers' lives easier
-            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://github.com/Anipaleja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25"
+              >
+                <GitFork className="mr-2 w-5 h-5" />
+                View GitHub Profile
+              </a>
+              <a
+                href="/contact"
+                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-white border border-white/10 hover:border-white/30 transition-all duration-300"
+              >
+                Start a Conversation
+              </a>
+            </div>
           </div>
         </div>
       </div>
