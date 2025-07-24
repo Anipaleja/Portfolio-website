@@ -34,7 +34,7 @@ const Stats = () => {
       label: 'Projects',
       value: '30+',
       description: 'Open source repositories',
-      gradient: 'from-emerald-500 to-teal-600',
+      gradient: 'from-green-500 to-teal-600',
       details: 'AI, robotics, security, and developer tools'
     },
     {
@@ -66,7 +66,7 @@ const Stats = () => {
       icon: Rocket,
       title: 'Developer Tools',
       description: 'Creating utilities, libraries, and security tools that make developers more productive and secure',
-      gradient: 'from-green-500 to-emerald-600',
+      gradient: 'from-green-500 to-green-600',
       achievements: ['Advanced Dev Utils', 'nginx-defender', 'Real-time Monitoring']
     }
   ]
@@ -76,7 +76,7 @@ const Stats = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-emerald-500/40 to-teal-500/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-green-500/40 to-teal-500/40 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -114,7 +114,7 @@ const Stats = () => {
                 </div>
                 
                 <div className="mb-2">
-                  <span className="text-4xl font-black text-white group-hover:text-emerald-400 transition-colors">
+                  <span className="text-4xl font-black text-white group-hover:text-green-400 transition-colors">
                     {stat.value}
                   </span>
                 </div>
@@ -145,7 +145,7 @@ const Stats = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
                   {highlight.title}
                 </h3>
                 
@@ -156,7 +156,7 @@ const Stats = () => {
                 <div className="space-y-2">
                   {highlight.achievements.map((achievement, achIndex) => (
                     <div key={achIndex} className="flex items-center text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-400 mr-3 flex-shrink-0"></div>
                       <span className="text-gray-300">{achievement}</span>
                     </div>
                   ))}
@@ -181,7 +181,7 @@ const Stats = () => {
                 href="https://github.com/Anipaleja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
               >
                 <GitFork className="mr-2 w-5 h-5" />
                 View GitHub Profile

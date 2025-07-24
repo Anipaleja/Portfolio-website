@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       forks: 1,
       featured: true,
       icon: Cpu,
-      gradient: 'from-emerald-500 to-teal-600',
+      gradient: 'from-green-500 to-teal-600',
       category: 'Robotics'
     },
     {
@@ -93,13 +93,13 @@ const FeaturedProjects = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 mb-6">
-            <Zap className="w-4 h-4 text-emerald-400 mr-2" />
+            <Zap className="w-4 h-4 text-green-400 mr-2" />
             <span className="text-sm font-medium text-gray-300">Featured Work</span>
           </div>
           
@@ -116,7 +116,7 @@ const FeaturedProjects = () => {
           
           <Link
             href="/projects"
-            className="group inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+            className="group inline-flex items-center text-green-400 hover:text-green-300 transition-colors font-medium"
           >
             View all projects
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -142,7 +142,7 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
                   {project.title}
                 </h3>
 
@@ -190,7 +190,7 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Hover effect overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             )
           })}
@@ -209,7 +209,7 @@ const FeaturedProjects = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
               >
                 Get In Touch
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

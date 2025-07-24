@@ -32,21 +32,21 @@ const Hero = () => {
       </div>
 
       {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-emerald-400/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-400/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <div className="animate-fadeInUp">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-strong border border-white/10 mb-8 group hover:border-emerald-400/50 transition-all duration-300">
-            <Sparkles className="w-4 h-4 text-emerald-400 mr-2 animate-pulse" />
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass-strong border border-white/10 mb-8 group hover:border-green-400/50 transition-all duration-300">
+            <Sparkles className="w-4 h-4 text-green-400 mr-2 animate-pulse" />
             <span className="text-sm font-medium text-gray-300">Available for new opportunities</span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-none">
             <span className="block text-white">Hey! I'm</span>
-            <span className="block bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
+            <span className="block bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
               Anish Paleja
             </span>
           </h1>
@@ -54,7 +54,7 @@ const Hero = () => {
           {/* Subtitle */}
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 max-w-4xl mx-auto leading-relaxed font-light">
             Student innovator building the future with{' '}
-            <span className="text-emerald-400 font-semibold">AI</span>,{' '}
+            <span className="text-green-400 font-semibold">AI</span>,{' '}
             <span className="text-blue-400 font-semibold">robotics</span>, and{' '}
             <span className="text-purple-400 font-semibold">neural networks</span>
           </p>
@@ -68,11 +68,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16">
             <Link
               href="/projects"
-              className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25"
+              className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
             >
               <span className="relative z-10">View My Work</span>
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
             </Link>
             
             <Link
@@ -118,7 +118,7 @@ const Hero = () => {
               className="group p-4 rounded-full glass hover:glass-strong transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >
-              <Mail className="w-7 h-7 text-gray-400 group-hover:text-emerald-400 transition-colors" />
+              <Mail className="w-7 h-7 text-gray-400 group-hover:text-green-400 transition-colors" />
             </a>
           </div>
 
@@ -150,7 +150,7 @@ const Hero = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-1/4 left-4 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+      <div className="absolute top-1/4 left-4 w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
       <div className="absolute top-1/3 right-8 w-1 h-1 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
       <div className="absolute bottom-1/4 left-8 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
     </section>

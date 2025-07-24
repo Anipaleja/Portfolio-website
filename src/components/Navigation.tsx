@@ -79,7 +79,7 @@ const Navigation = () => {
                     href={item.href}
                     className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? 'text-emerald-400 bg-emerald-400/10'
+                        ? 'text-green-400 bg-green-400/10'
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -97,7 +97,7 @@ const Navigation = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-gray-400 hover:text-emerald-400 transition-colors duration-200"
+                  className="p-2 rounded-lg text-gray-400 hover:text-green-400 transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={18} />
@@ -134,7 +134,7 @@ const Navigation = () => {
       }`}>
         {/* Sidebar Header */}
         <div className="flex h-16 flex-shrink-0 items-center justify-between border-b border-white/10 px-6">
-          <span className="text-emerald-400 font-mono text-lg font-semibold">Navigation</span>
+          <span className="text-green-400 font-mono text-lg font-semibold">Navigation</span>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg text-gray-400 hover:text-red-400 transition-colors duration-200"
@@ -156,7 +156,7 @@ const Navigation = () => {
                     href={item.href}
                     className={`flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium transition-all duration-200 ${
                       isActive
-                        ? 'text-emerald-400 bg-emerald-400/10 border-l-2 border-emerald-400'
+                        ? 'text-green-400 bg-green-400/10 border-l-2 border-green-400'
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -185,7 +185,7 @@ const Navigation = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg text-gray-400 hover:text-emerald-400 hover:bg-white/5 transition-all duration-200"
+                  className="p-3 rounded-lg text-gray-400 hover:text-green-400 hover:bg-white/5 transition-all duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />

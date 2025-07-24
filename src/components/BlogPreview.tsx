@@ -23,7 +23,7 @@ const BlogPreview = () => {
       slug: 'ai-robotic-arm-emg-signals',
       tags: ['Robotics', 'AI', 'EMG', 'Hardware'],
       featured: true,
-      gradient: 'from-emerald-500 to-teal-600'
+      gradient: 'from-green-500 to-teal-600'
     },
     {
       title: 'Creating a 4.7B Parameter Language Model with RAG Capabilities',
@@ -75,7 +75,7 @@ const BlogPreview = () => {
           
           <Link
             href="/blog"
-            className="group inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+            className="group inline-flex items-center text-green-400 hover:text-green-300 transition-colors font-medium"
           >
             View all posts
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -111,7 +111,7 @@ const BlogPreview = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors line-clamp-2">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors line-clamp-2">
                   <Link href={`/blog/${post.slug}`}>
                     {post.title}
                   </Link>
@@ -137,7 +137,7 @@ const BlogPreview = () => {
                 {/* Read more link */}
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group/link inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+                  className="group/link inline-flex items-center text-green-400 hover:text-green-300 transition-colors font-medium"
                 >
                   Read article
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-1" />
@@ -178,9 +178,9 @@ const BlogPreview = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-6 py-4 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-400 flex-1 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                className="px-6 py-4 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-400 flex-1 focus:outline-none focus:border-green-500/50 transition-colors"
               />
-              <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25">
+              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
                 Subscribe
               </button>
             </div>

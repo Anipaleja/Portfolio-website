@@ -37,30 +37,30 @@ const Breadcrumb = () => {
 
   return (
     <nav 
-      className="flex items-center space-x-1 font-mono text-sm text-emerald-400/80 select-none"
+      className="flex items-center space-x-1 font-mono text-sm text-green-400/80 select-none"
       aria-label="Breadcrumb navigation"
     >
       {/* Terminal prompt symbol */}
       <div className="flex items-center space-x-2 mr-2">
-        <Terminal size={16} className="text-emerald-400" />
-        <span className="text-emerald-500">~</span>
+        <Terminal size={16} className="text-green-400" />
+        <span className="text-green-500">~</span>
       </div>
 
       {breadcrumbItems.map((item, index) => (
         <div key={item.href} className="flex items-center space-x-1">
           {/* Path separator */}
           {index > 0 && (
-            <span className="text-emerald-600/60">/</span>
+            <span className="text-green-600/60">/</span>
           )}
           
           {/* Breadcrumb item */}
           <Link
             href={item.href}
             className={`
-              transition-all duration-200 hover:text-emerald-400 
+              transition-all duration-200 hover:text-green-400 
               ${index === breadcrumbItems.length - 1 
-                ? 'text-emerald-300 font-medium' 
-                : 'text-emerald-400/70 hover:text-emerald-400'
+                ? 'text-green-300 font-medium' 
+                : 'text-green-400/70 hover:text-green-400'
               }
             `}
             aria-current={index === breadcrumbItems.length - 1 ? 'page' : undefined}
@@ -80,7 +80,7 @@ const Breadcrumb = () => {
       {/* Animated cursor */}
       <span 
         className={`
-          inline-block w-2 h-4 bg-emerald-400 ml-1 transition-opacity duration-100
+          inline-block w-2 h-4 bg-green-400 ml-1 transition-opacity duration-100
           ${showCursor ? 'opacity-100' : 'opacity-0'}
         `}
         aria-hidden="true"
