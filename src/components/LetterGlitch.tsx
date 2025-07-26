@@ -258,7 +258,7 @@ const LetterGlitch = ({
     width: '100%',
     height: '100%',
     pointerEvents: 'none',
-    background: `radial-gradient(circle, rgba(0,0,0,0.8) 0%, transparent 60%)`,
+    background: `radial-gradient(circle, var(--theme-bg) 0%, transparent 60%)`,
   };
 
   return (

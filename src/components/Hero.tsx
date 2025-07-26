@@ -76,7 +76,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16">
             <Link
               href="/projects"
-              className="group relative inline-flex items-center px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="group relative inline-flex items-center px-8 py-4 rounded-full font-semibold text-theme-text transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               style={{ backgroundColor: 'var(--theme-accent)' }}
             >
               <span className="relative z-10">View My Work</span>
@@ -172,7 +172,7 @@ const Hero = () => {
               <div className="text-sm text-overlay">Organizations</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-text mb-2">2+</div>
+              <div className="text-3xl font-bold text-text mb-2">6+</div>
               <div className="text-sm text-overlay">Years Experience</div>
             </div>
           </div>

@@ -6,18 +6,18 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 export const themes = {
   latte: {
     name: 'Latte',
-    bg: '#eff1f5',
-    surface: '#ccd0da',
-    overlay: '#9ca0b0',
-    text: '#4c4f69',
-    subtext: '#6c6f85',
-    accent: '#1e66f5', // Blue
-    green: '#40a02b',
-    red: '#d20f39',
-    yellow: '#df8e1d',
-    purple: '#8839ef',
-    pink: '#ea76cb',
-    teal: '#179299',
+    bg: '#eff1f5',        // Light background
+    surface: '#e6e9ef',   // Slightly darker surface
+    overlay: '#6c6f85',   // Medium contrast for borders/overlays
+    text: '#4c4f69',      // Dark text for excellent contrast on light bg
+    subtext: '#5c5f77',   // Slightly lighter than main text
+    accent: '#1e66f5',    // Blue accent
+    green: '#40a02b',     // Green
+    red: '#d20f39',       // Red
+    yellow: '#df8e1d',    // Yellow/Orange
+    purple: '#8839ef',    // Purple
+    pink: '#ea76cb',      // Pink
+    teal: '#179299',      // Teal
     class: 'theme-latte'
   },
   frappe: {
@@ -123,6 +123,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     root.style.setProperty('--theme-purple', theme.purple)
     root.style.setProperty('--theme-pink', theme.pink)
     root.style.setProperty('--theme-teal', theme.teal)
+    root.style.setProperty('--theme-blue', theme.accent) // Use accent as blue
+    root.style.setProperty('--theme-orange', theme.yellow) // Use yellow as orange fallback
     
     // Apply theme class
     root.className = theme.class

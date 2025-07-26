@@ -144,7 +144,7 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
+                <h3 className="text-2xl font-bold text-theme-text mb-4 group-hover:text-theme-green transition-colors">
                   {project.title}
                 </h3>
 
@@ -186,7 +186,7 @@ const FeaturedProjects = () => {
                       className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group"
                       aria-label="GitHub"
                     >
-                      <Github className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                      <Github className="w-5 h-5 text-theme-subtext group-hover:text-theme-text transition-colors" />
                     </a>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const FeaturedProjects = () => {
         {/* Call to Action */}
         <div className="text-center mt-20">
           <div className="glass-strong rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-theme-text mb-4">
               Ready to Collaborate?
             </h3>
             <p className="text-gray-400 mb-8 text-lg max-w-2xl mx-auto">
@@ -211,14 +211,14 @@ const FeaturedProjects = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-theme-green to-theme-blue rounded-full font-semibold text-theme-text transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-theme-green/25"
               >
                 Get In Touch
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/projects"
-                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-white border border-white/10 hover:border-white/30 transition-all duration-300"
+                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-theme-text border border-theme-overlay hover:border-theme-overlay/50 transition-all duration-300"
               >
                 View All Projects
               </Link>

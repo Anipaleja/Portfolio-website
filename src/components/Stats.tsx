@@ -85,18 +85,18 @@ const Stats = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-white/10 mb-6">
-            <Zap className="w-4 h-4 text-yellow-400 mr-2" />
-            <span className="text-sm font-medium text-gray-300">Performance Metrics</span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass border border-theme-overlay mb-6">
+            <Zap className="w-4 h-4 text-theme-yellow mr-2" />
+            <span className="text-sm font-medium text-theme-subtext">Performance Metrics</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-theme-text to-theme-subtext bg-clip-text text-transparent">
               By the Numbers
             </span>
           </h2>
           
-          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-theme-subtext mb-8 max-w-3xl mx-auto">
             A snapshot of my journey in technology, innovation, and open-source contribution. 
             Every metric represents hours of learning and building.
           </p>
@@ -147,11 +147,11 @@ const Stats = () => {
               >
                 <div className="mb-6">
                   <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${highlight.gradient} shadow-lg`}>
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-6 h-6 text-theme-text" />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-400 transition-colors">
+                <h3 className="text-2xl font-bold text-theme-text mb-4 group-hover:text-theme-green transition-colors">
                   {highlight.title}
                 </h3>
                 
@@ -175,7 +175,7 @@ const Stats = () => {
         {/* Call to Action */}
         <div className="text-center mt-20">
           <div className="glass-strong rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-theme-text mb-4">
               Let's Build Something Amazing
             </h3>
             <p className="text-gray-400 mb-8 text-lg max-w-2xl mx-auto">
@@ -187,14 +187,14 @@ const Stats = () => {
                 href="https://github.com/Anipaleja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-theme-green to-theme-blue rounded-full font-semibold text-theme-text transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-theme-green/25"
               >
                 <GitFork className="mr-2 w-5 h-5" />
                 View GitHub Profile
               </a>
               <a
                 href="/contact"
-                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-white border border-white/10 hover:border-white/30 transition-all duration-300"
+                className="group inline-flex items-center px-8 py-4 glass rounded-full font-semibold text-theme-text border border-theme-overlay hover:border-theme-overlay/50 transition-all duration-300"
               >
                 Start a Conversation
               </a>

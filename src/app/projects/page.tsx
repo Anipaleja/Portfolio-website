@@ -162,8 +162,8 @@ const ProjectsPage = () => {
                 onClick={() => setSelectedFilter(filter)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   selectedFilter === filter
-                    ? 'bg-green-500 text-white'
-                    : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10'
+                    ? 'bg-theme-green text-theme-text'
+                    : 'bg-theme-overlay/20 text-theme-subtext hover:bg-theme-overlay/30 hover:text-theme-text border border-theme-overlay/20'
                 }`}
               >
                 {filter}
@@ -175,7 +175,7 @@ const ProjectsPage = () => {
         {/* Featured Projects */}
         {featuredProjects.length > 0 && (
           <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-12 flex items-center text-white">
+            <h2 className="text-3xl font-bold mb-12 flex items-center text-theme-text">
               <Star className="mr-3 text-yellow-400" size={28} />
               Featured Projects
             </h2>
@@ -189,7 +189,7 @@ const ProjectsPage = () => {
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <h3 className="text-2xl font-bold text-white group-hover:text-green-400 transition-colors">
+                          <h3 className="text-2xl font-bold text-theme-text group-hover:text-theme-green transition-colors">
                             {project.title}
                           </h3>
                           <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(project.status)}`}>
